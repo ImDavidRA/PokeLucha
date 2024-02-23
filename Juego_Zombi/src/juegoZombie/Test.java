@@ -23,10 +23,10 @@ public class Test {
 			}
 			else {
 				System.out.println("\nDaño realizado por "+p1+": "+x);
-			}						
-			
+			}
+						
 			// Se actualiza la vida del zombie enemigo
-			z2.recibirDanio(z1);
+			z2.recibirDanio(x);
 			System.out.println("Salud "+p2+": "+z2.getSalud());
 			
 			// Sale del búcle en caso que el z2 baje por debajo de 0 de salud
@@ -46,8 +46,8 @@ public class Test {
 			}
 			
 			// Se actualiza la vida del zombie enemigo
-			z1.recibirDanio(z2);
-			System.out.println("Salud "+p1+": "+z1.getSalud());		
+			z1.recibirDanio(y);
+			System.out.println("Salud "+p1+": "+z1.getSalud());
 			
 		}
 		

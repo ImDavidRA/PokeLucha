@@ -22,8 +22,8 @@ public class Zombie {
 	 * Método que reduce la salud del Zombie actuál en base al método atacar() de otro zombie
 	 * @param z - Zombie parámetro
 	 */
-	public void recibirDanio(Zombie z) {
-		this.salud -= z.atacar();
+	public void recibirDanio(int x) {
+		this.salud -= x;
 
 	}
 	
