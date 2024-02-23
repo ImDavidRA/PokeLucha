@@ -14,12 +14,8 @@ public class Zombie {
 	 * Método que calcula el ataque en base al daño de cada zombie
 	 * @return - int Daño a infligir, puede ser critico
 	 */
-	public int atacar() {
-		int danio;
-		
-		danio = (int)(Math.random()*this.daño);
-		
-		return danio;
+	public int atacar() {		
+		return (int)(Math.random()*this.daño);
 	}
 
 	/**
