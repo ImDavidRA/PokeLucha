@@ -11,7 +11,7 @@ public class ZombieHijo3 extends Zombie {
 	
 	// Metodos
 	public boolean evasion() {
-		if ((int)(Math.random()*10+1)==1) {
+		if ((int)(Math.random()*5+1)==1) {
 			return true;	
 		}
 		return false;
