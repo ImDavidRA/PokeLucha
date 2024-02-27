@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class Test {
 
 	/**
-	 * Procedimiento que simula la pelea entre ambos Zombie
+	 * Procedimiento que simula el ataque del zombi1
 	 * @param z1 - Zombie parámetro
 	 * @param z2 - Zombie parámetro
 	 */
-	private static void pelea(Zombie z1, Zombie z2, String p1, String p2) {
+	private static void pelea1(Zombie z1, Zombie z2, String p1, String p2) {
 			
 			// Utiliza el método atacar() para generar un valor aleatorio para el ataque y guardarlo en X
 			int x = z1.atacar();
@@ -27,35 +27,11 @@ public class Test {
 			z2.recibirDanio(x);
 			System.out.println("Salud "+p2+": "+z2.getSalud());
 				
-			// Utiliza el método atacar() para generar un valor aleatorio para el ataque y guardarlo en Y
-			int y = z2.atacar();
 			
-			// La función crit() decide si tenemos suerte y sale crítico, imprimimos una cosa u otra en caso de
-			if (crit()) {
-				y *= 1.5;
-				System.out.println("\n¡HA SIDO CRÍTICO!: "+y);
-			}
-			else {
-				System.out.println("\nDaño realizado por "+p2+": "+y);
-			}
-			
-			// Se actualiza la vida del zombie enemigo
-			z1.recibirDanio(y);
-			System.out.println("Salud "+p1+": "+z1.getSalud());
 			
 		
 		// Notificamos sobre cual de los zombies ha ganado
-		if (z1.getSalud()>0) {
-			System.out.println();
-			System.out.println("                 ______  __      _    _  _____  _   _  _____  _ \r\n"
-					+ "                 | ___ \\/  |    | |  | ||_   _|| \\ | |/  ___|| |\r\n"
-					+ "                 | |_/ /`| |    | |  | |  | |  |  \\| |\\ `--. | |\r\n"
-					+ "                 |  __/  | |    | |/\\| |  | |  | . ` | `--. \\| |\r\n"
-					+ "                 | |    _| |_   \\  /\\  / _| |_ | |\\  |/\\__/ /|_|\r\n"
-					+ "                 \\_|    \\___/    \\/  \\/  \\___/ \\_| \\_/\\____/ (_)\r\n"
-					+ "                                                                ");
-		}
-		else {
+		if(z2.getSalud()>0) {
 			System.out.println();
 			System.out.println("                 ______  _____     _    _  _____  _   _  _____  _ \r\n"
 					+ "                 | ___ \\/ __  \\   | |  | ||_   _|| \\ | |/  ___|| |\r\n"
@@ -65,6 +41,39 @@ public class Test {
 					+ "                 \\_|    \\_____/    \\/  \\/  \\___/ \\_| \\_/\\____/ (_)\r\n"
 					+ "                                                                  ");
 		}
+	}
+	/**
+	 * Procedimiento que simula el ataque del zombi2
+	 * @param z1 - Zombie parámetro
+	 * @param z2 - Zombie parámetro
+	 */
+	private static void pelea2(Zombie z2, Zombie z1, String p1, String p2) {
+		// Utiliza el método atacar() para generar un valor aleatorio para el ataque y guardarlo en Y
+					int y = z2.atacar();
+					
+					// La función crit() decide si tenemos suerte y sale crítico, imprimimos una cosa u otra en caso de
+					if (crit()) {
+						y *= 1.5;
+						System.out.println("\n¡HA SIDO CRÍTICO!: "+y);
+					}
+					else {
+						System.out.println("\nDaño realizado por "+p2+": "+y);
+					}
+					
+					// Se actualiza la vida del zombie enemigo
+					z1.recibirDanio(y);
+					System.out.println("Salud "+p1+": "+z1.getSalud());
+					// Notificamos sobre cual de los zombies ha ganado
+					if (z1.getSalud()>0) {
+						System.out.println();
+						System.out.println("                 ______  __      _    _  _____  _   _  _____  _ \r\n"
+								+ "                 | ___ \\/  |    | |  | ||_   _|| \\ | |/  ___|| |\r\n"
+								+ "                 | |_/ /`| |    | |  | |  | |  |  \\| |\\ `--. | |\r\n"
+								+ "                 |  __/  | |    | |/\\| |  | |  | . ` | `--. \\| |\r\n"
+								+ "                 | |    _| |_   \\  /\\  / _| |_ | |\\  |/\\__/ /|_|\r\n"
+								+ "                 \\_|    \\___/    \\/  \\/  \\___/ \\_| \\_/\\____/ (_)\r\n"
+								+ "                                                                ");
+					}
 	}
 	
 	/**
@@ -115,42 +124,57 @@ public class Test {
 		int opcion = input.nextInt();
 		
 		Zombie c1 = null;
-		
+		int num2=0;
 		switch (opcion) {
 		case 1:
-			c1 = new ZombieHijo();
+			num2=1;
 			break;
 		case 2:
-			c1 = new ZombieHijo2();
+			num2=2;
 			break;
 		case 3:
-			c1 = new ZombieHijo3();
+			num2=3;
 			break;
 		default:
 			// Hay que poner control de errores
 			break;
 		}
+		if (num2==1) {
+			c1= new ZombieHijo();
+		}else if(num2==2) {
+			c1= new ZombieHijo2();
+		}else {
+			c1= new ZombieHijo3();
+		}
+		
 		
 		menu(z1,z2,z3,p2);
 		opcion = input.nextInt();
 		
 		Zombie c2 = null;
-		
+		int num=0;
 		switch (opcion) {
 		case 1:
-			c2 = new ZombieHijo();
+			num=1;
 			break;
 		case 2:
-			c2 = new ZombieHijo2();
+			num=2;
 			break;
 		case 3:
-			c2 = new ZombieHijo3();
+			num=3;
 			break;
 		default:
 			// Hay que poner control de errores
 			break;
 		}
-		
+		if (num==1) {
+			c2= new ZombieHijo();
+		}else if(num==2) {
+			c2= new ZombieHijo2();
+		}else {
+			c2= new ZombieHijo3();
+		}
+
 		System.out.println();
 		System.out.println("                     ______  _____  _____  _   _  _____  _ \r\n"
 				+ "                     |  ___||_   _||  __ \\| | | ||_   _|| |\r\n"
@@ -162,7 +186,34 @@ public class Test {
 		System.out.println();
 		// Bucle, mientras que la salud de 1 de los 2 zombies sea mayor que 0, seguirá
 		while (c1.getSalud()>0 && c2.getSalud()>0) {
-		pelea(c1,c2,p1,p2);
+			if (num==3 && num2==3) {
+				if(z3.evasion()==false) {
+					pelea1(c1,c2,p1,p2);
+					pelea2(c1,c2,p1,p2);
+				}
+					
+
+			}
+		if(num==3) {
+			if(z3.evasion()) {
+				pelea2(c1,c2,p1,p2);
+			}else {
+				pelea1(c1,c2,p1,p2);
+				pelea2(c1,c2,p1,p2);
+			}
+		if(num2==3) {
+			if(z3.evasion()) {
+				pelea1(c1,c2,p1,p2);
+			}else {
+				pelea1(c1,c2,p1,p2);
+				pelea2(c1,c2,p1,p2);
+			}
+		if(num!=3 && num2!=3) {
+			pelea1(c1,c2,p1,p2);
+		   pelea2(c1,c2,p1,p2);
+		}
+		}
+		}
 		
 		}
 		System.out.println();

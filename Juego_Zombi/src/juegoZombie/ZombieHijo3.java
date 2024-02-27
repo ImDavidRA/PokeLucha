@@ -10,11 +10,11 @@ public class ZombieHijo3 extends Zombie {
 	}
 	
 	// Metodos
-	public void evasion(int x) {
+	public boolean evasion() {
 		if ((int)(Math.random()*10+1)==1) {
-			salud=salud+x;
-			
+			return true;	
 		}
+		return false;
 	}
 	
 }
