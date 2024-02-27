@@ -109,7 +109,7 @@ public class Test {
 		// FIN Título
 		
 		// Creamos 3 instancias de ejemplo de zombies
-		ZombieHijo z1 = new ZombieHijo();
+		zombieCaminante z1 = new zombieCaminante();
 		ZombieHijo2 z2 = new ZombieHijo2();
 		ZombieHijo3 z3 = new ZombieHijo3();
 		
@@ -125,7 +125,7 @@ public class Test {
 		
 		switch (opcion) {
 		case 1:
-			c1 = new ZombieHijo();
+			c1 = new zombieCaminante();
 			break;
 		case 2:
 			c1 = new ZombieHijo2();
@@ -145,7 +145,7 @@ public class Test {
 		
 		switch (opcion) {
 		case 1:
-			c2 = new ZombieHijo();
+			c2 = new zombieCaminante();
 			break;
 		case 2:
 			c2 = new ZombieHijo2();
