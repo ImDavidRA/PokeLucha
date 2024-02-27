@@ -110,7 +110,7 @@ public class Test {
 		
 		// Creamos 3 instancias de ejemplo de zombies
 		ZombieHijo z1 = new ZombieHijo();
-		ZombieHijo2 z2 = new ZombieHijo2();
+		zombieCorredor z2 = new zombieCorredor();
 		ZombieHijo3 z3 = new ZombieHijo3();
 		
 		String p1 = "Player1";
@@ -128,7 +128,7 @@ public class Test {
 			c1 = new ZombieHijo();
 			break;
 		case 2:
-			c1 = new ZombieHijo2();
+			c1 = new zombieCorredor();
 			break;
 		case 3:
 			c1 = new ZombieHijo3();
@@ -148,7 +148,7 @@ public class Test {
 			c2 = new ZombieHijo();
 			break;
 		case 2:
-			c2 = new ZombieHijo2();
+			c2 = new zombieCorredor();
 			break;
 		case 3:
 			c2 = new ZombieHijo3();
