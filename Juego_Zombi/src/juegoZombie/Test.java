@@ -10,8 +10,6 @@ public class Test {
 	 * @param z2 - Zombie parámetro
 	 */
 	private static void pelea(Zombie z1, Zombie z2, String p1, String p2) {
-		// Bucle, mientras que la salud de 1 de los 2 zombies sea mayor que 0, seguirá
-		while (z1.getSalud()>0 && z2.getSalud()>0) {
 			
 			// Utiliza el método atacar() para generar un valor aleatorio para el ataque y guardarlo en X
 			int x = z1.atacar();
@@ -28,11 +26,7 @@ public class Test {
 			// Se actualiza la vida del zombie enemigo
 			z2.recibirDanio(x);
 			System.out.println("Salud "+p2+": "+z2.getSalud());
-			
-			// Sale del búcle en caso que el z2 baje por debajo de 0 de salud
-			if (z2.getSalud()<0)
-				break;
-			
+				
 			// Utiliza el método atacar() para generar un valor aleatorio para el ataque y guardarlo en Y
 			int y = z2.atacar();
 			
@@ -49,7 +43,6 @@ public class Test {
 			z1.recibirDanio(y);
 			System.out.println("Salud "+p1+": "+z1.getSalud());
 			
-		}
 		
 		// Notificamos sobre cual de los zombies ha ganado
 		if (z1.getSalud()>0) {
@@ -167,9 +160,11 @@ public class Test {
 				+ "                     \\_|     \\___/  \\____/\\_| |_/  \\_/  (_)\r\n"
 				+ "                                                           ");
 		System.out.println();
-		
+		// Bucle, mientras que la salud de 1 de los 2 zombies sea mayor que 0, seguirá
+		while (c1.getSalud()>0 && c2.getSalud()>0) {
 		pelea(c1,c2,p1,p2);
 		
+		}
 		System.out.println();
 		
 		input.close();
