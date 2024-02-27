@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class Test {
 
+	Thread thread = new Thread(new Thread());
+	
+	final static int TIEMPO = 1300;
+	
 	/**
 	 * Procedimiento que simula la pelea entre ambos Zombie
 	 * @param z1 - Zombie parámetro
@@ -19,7 +23,7 @@ public class Test {
 			// La función crit() decide si tenemos suerte y sale crítico, imprimimos una cosa u otra en caso de
 			if (crit()) {
 				x *= 1.5;
-				System.out.println("\n¡HA SIDO CRÍTICO!: "+x);
+				System.out.println("\n¡CRÍTICO DEL PLAYER 1!: "+x);
 			}
 			else {
 				System.out.println("\nDaño realizado por "+p1+": "+x);
@@ -28,6 +32,14 @@ public class Test {
 			// Se actualiza la vida del zombie enemigo
 			z2.recibirDanio(x);
 			System.out.println("Salud "+p2+": "+z2.getSalud());
+			
+			// Temporizador con TIEMPO segundos de espera
+			try {
+				Thread.sleep(TIEMPO);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			// Sale del búcle en caso que el z2 baje por debajo de 0 de salud
 			if (z2.getSalud()<0)
@@ -39,7 +51,7 @@ public class Test {
 			// La función crit() decide si tenemos suerte y sale crítico, imprimimos una cosa u otra en caso de
 			if (crit()) {
 				y *= 1.5;
-				System.out.println("\n¡HA SIDO CRÍTICO!: "+y);
+				System.out.println("\n¡CRÍTICO DEL PLAYER 2!: "+y);
 			}
 			else {
 				System.out.println("\nDaño realizado por "+p2+": "+y);
@@ -48,6 +60,14 @@ public class Test {
 			// Se actualiza la vida del zombie enemigo
 			z1.recibirDanio(y);
 			System.out.println("Salud "+p1+": "+z1.getSalud());
+			
+			// Temporizador con TIEMPO segundos de espera
+			try {
+				Thread.sleep(TIEMPO);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 		}
 		
@@ -110,7 +130,7 @@ public class Test {
 		
 		// Creamos 3 instancias de ejemplo de zombies
 		ZombieHijo z1 = new ZombieHijo();
-		zombieCorredor z2 = new zombieCorredor();
+		ZombieCorredor z2 = new ZombieCorredor();
 		ZombieHijo3 z3 = new ZombieHijo3();
 		
 		String p1 = "Player1";
@@ -128,7 +148,7 @@ public class Test {
 			c1 = new ZombieHijo();
 			break;
 		case 2:
-			c1 = new zombieCorredor();
+			c1 = new ZombieCorredor();
 			break;
 		case 3:
 			c1 = new ZombieHijo3();
@@ -148,7 +168,7 @@ public class Test {
 			c2 = new ZombieHijo();
 			break;
 		case 2:
-			c2 = new zombieCorredor();
+			c2 = new ZombieCorredor();
 			break;
 		case 3:
 			c2 = new ZombieHijo3();
@@ -173,10 +193,8 @@ public class Test {
 		System.out.println();
 		
 		input.close();
-		// Fin del escaner
-		
-		
-		
+		// Fin del escaner		
 	}
 
 }
+

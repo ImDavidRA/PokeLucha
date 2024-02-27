@@ -1,8 +1,8 @@
 package juegoZombie;
 
-public class zombieCorredor extends Zombie {
+public class ZombieCorredor extends Zombie {
 	
-	zombieCorredor() {
+	ZombieCorredor() {
 		this.daño=170;
 		this.salud=180;
 		this.nombre="Zombi2";
