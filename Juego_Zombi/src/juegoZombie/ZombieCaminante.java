@@ -5,7 +5,7 @@ public class ZombieCaminante extends Zombie {
 	ZombieCaminante() {
 		this.daño=50;
 		this.salud=400;
-		this.nombre="Zombi1";
+		this.nombre="ZombiCaminante";
 		this.velocidad=5;
 	}
 	

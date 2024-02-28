@@ -98,18 +98,20 @@ public class Test {
 			int x2 = 0; // Variable para almacenar el segundo ataque en caso de doble golpe
 
 			// Llamamiento a los métodos en función del tipo de zombie del P1
+			boolean critico = false;
 			if (opcion == 1) {
-			    boolean critico = ((ZombieCaminante) c1).crit();
+			    critico = ((ZombieCaminante) c1).crit();
 			    if (critico) {
 			        x *= 1.5;
-			        System.out.println("CRITICO!!!: " + x);
+			        System.out.println("\nCRITICO!!!: " + x);
 			    }
 			}
 
+			boolean velocidad = false;
 			if (opcion == 2) {
-			    boolean velocidad = ((ZombieCorredor) c1).doubleHit();
+			    velocidad = ((ZombieCorredor) c1).doubleHit();
 			    if (velocidad) {
-			        System.out.println("DOBLE GOLPE!!!");
+			        System.out.println("\nDOBLE GOLPE!!!");
 			        System.out.println("Primer hit: " + x);
 			        x2 = c1.atacar();
 			        System.out.println("Segundo hit: " + x2);
@@ -120,18 +122,19 @@ public class Test {
 
 			boolean esquiva = false;
 			if (opcion == 3) {
-			    esquiva = ((ZombieSaltarin) c1).evasion(x);
+			    esquiva = ((ZombieSaltarin) c2).evasion(x);
 			    if (esquiva) {
-			        System.out.println("Vaya, ha esquivado el ataque...");
+			        System.out.println("\n"+p1+" falla el ataque...");
 			    }
 			}
 
 			// Si no hubo esquiva, se muestra el daño realizado
-			if (!esquiva) {
+			if (!esquiva && !critico && !velocidad) {
 			    System.out.println("\nDaño realizado por "+p1+": " + x);
 			}
 
 			// Se actualiza la vida del zombie enemigo
+			
 			c2.recibirDanio(x);
 			System.out.println("Salud "+p2+": "+c2.getSalud());
 
@@ -150,41 +153,46 @@ public class Test {
 			
 			// Utiliza el método atacar() para generar un valor aleatorio para el ataque y guardarlo en Y
 			int y = c2.atacar();
-			int y2 = 0;
-			
-			// Llamamiento a los métodos en función del tipo de zombie del P2
-			if (opcion2==1) {
-				boolean critico = ((ZombieCaminante) c2).crit();
-				if (critico) {
-					y*=1.5;
-					System.out.println("CRITICO!!!: "+y);					
-				}
+			int y2 = 0; // Variable para almacenar el segundo ataque en caso de doble golpe
+
+			// Llamamiento a los métodos en función del tipo de zombie del P1
+			critico = false;
+			if (opcion2 == 1) {
+			    critico = ((ZombieCaminante) c2).crit();
+			    if (critico) {
+			        y *= 1.5;
+			        System.out.println("\nCRITICO!!!: " + y);
+			    }
 			}
-			
-			if (opcion2==2) {
-				boolean velocidad = ((ZombieCorredor) c2).doubleHit();
-				if (velocidad) {
-					System.out.println("DOBLE GOLPE!!!");
-					System.out.println("Primer hit: "+y);
-					y2 = c2.atacar();
-					System.out.println("Segundo hit: "+y2);
-					
-					y += x2;
-				}
+
+			velocidad = false;
+			if (opcion2 == 2) {
+			    velocidad = ((ZombieCorredor) c2).doubleHit();
+			    if (velocidad) {
+			        System.out.println("\nDOBLE GOLPE!!!");
+			        System.out.println("Primer hit: " + y);
+			        y2 = c2.atacar();
+			        System.out.println("Segundo hit: " + y2);
+
+			        y += y2;
+			    }
 			}
-			
+
 			esquiva = false;
-			if (opcion2==3) {
-				esquiva = ((ZombieSaltarin) c2).evasion(y);
-				if (esquiva) {
-					System.out.println("Vaya, ha esquivado el ataque...");
-				}
-			} 
-			
-			if (!esquiva)
-				System.out.println("\nDaño realizado por "+p2+": "+y);					
-			
+			if (opcion2 == 3) {
+			    esquiva = ((ZombieSaltarin) c1).evasion(y);
+			    if (esquiva) {
+			        System.out.println("\n"+p2+" falla el ataque...");
+			    }
+			}
+
+			// Si no hubo esquiva, se muestra el daño realizado
+			if (!esquiva && !critico && !velocidad) {
+			    System.out.println("\nDaño realizado por "+p2+": " + y);
+			}
+
 			// Se actualiza la vida del zombie enemigo
+			
 			c1.recibirDanio(y);
 			System.out.println("Salud "+p1+": "+c1.getSalud());
 			
