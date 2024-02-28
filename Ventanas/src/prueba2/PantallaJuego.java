@@ -49,7 +49,7 @@ public class PantallaJuego extends JFrame {
 	Thread thread = new Thread(new Thread());
 	Thread daños = new Thread(new Thread());
 
-	Login inicio = new Login();
+	Inicio inicio = new Inicio();
 	private final JLabel Daño_a_P2_doble1 = new JLabel("");
 	private final JLabel Daño_a_P2_doble2 = new JLabel("");
 	private final JLabel Daño_a_P1_doble1 = new JLabel("");

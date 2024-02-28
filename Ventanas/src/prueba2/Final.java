@@ -105,7 +105,7 @@ public class Final extends JFrame {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Login inicio = new Login();			
+				Inicio inicio = new Inicio();			
 				
 				inicio.setVisible(true);
 				thisFrame.dispose();				

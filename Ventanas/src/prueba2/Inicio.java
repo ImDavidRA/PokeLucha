@@ -21,7 +21,7 @@ import javax.swing.border.TitledBorder;
 
 import javax.swing.JRadioButton;
 
-public class Login extends JFrame {
+public class Inicio extends JFrame {
 	
 	int xMouse, yMouse;
 	private JFrame thisFrame;
@@ -32,7 +32,7 @@ public class Login extends JFrame {
 	private ButtonGroup buttonG = new ButtonGroup();
 	private ButtonGroup buttonG2 = new ButtonGroup();
 	
-	public Login() {		
+	public Inicio() {		
 		setLocationByPlatform(true);
 		setUndecorated(true);
 		setResizable(false);
@@ -78,7 +78,7 @@ public class Login extends JFrame {
 		barra.addMouseMotionListener(new MouseMotionAdapter() {
 			@Override
 			public void mouseDragged(MouseEvent e) {
-				Login.this.setLocation(e.getXOnScreen() - xMouse, e.getYOnScreen() - yMouse);
+				Inicio.this.setLocation(e.getXOnScreen() - xMouse, e.getYOnScreen() - yMouse);
 			}
 		});
 		barra.addMouseListener(new MouseAdapter() {
