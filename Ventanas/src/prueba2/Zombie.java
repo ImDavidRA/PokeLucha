@@ -7,6 +7,8 @@ public class Zombie {
 	public int salud;
 	public int velocidad;
 	public int daño;
+	public int maxsalud;
+	public String ruta;
 		
 	// Métodos //
 	
@@ -33,10 +35,25 @@ public class Zombie {
 	}
 
 	/**
+	 * Método que devuelve la ruta de la imagen del zombie
+	 * @return - String ruta
+	 */
+	public String getRuta() {
+		return this.ruta;
+	}
+	
+	/**
 	 * @return - String nombre
 	 */
 	public String getNombre() {
 		return nombre;
+	}
+	
+	/**
+	 * @return - int salud maxima
+	 */
+	public int getMaxsalud() {
+		return maxsalud;
 	}
 
 	/**

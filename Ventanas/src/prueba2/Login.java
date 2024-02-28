@@ -18,6 +18,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import javax.swing.border.TitledBorder;
+
 import javax.swing.JRadioButton;
 
 public class Login extends JFrame {
@@ -159,9 +160,14 @@ public class Login extends JFrame {
 		buttonG2.add(P2_radio2);
 		buttonG2.add(P2_radio3);
 		
-		String Ruta_ZombieCaminante = "C:\\Users\\david\\Desktop\\images\\Zombies\\AtaqueZombie_Caminante.gif";
-		String Ruta_ZombieCorredor = "D:\\Descargas\\SaveAsGif\\2024-02-25\\Browncoat_Zombie_Gallery___Plants_vs__Zombies_Wiki___Fandom\\saved_image.gif";
-		String Ruta_ZombieSaltarin = "D:\\Descargas\\SaveAsGif\\2024-02-25\\Browncoat_Zombie_Gallery___Plants_vs__Zombies_Wiki___Fandom\\saved_image (1).gif";
+		String Ruta_ZombieCaminante_i = "C:\\Users\\david\\Desktop\\images\\Zombies\\bulbasaur_i.gif";
+		String Ruta_ZombieCorredor_i = "C:\\Users\\david\\Desktop\\images\\Zombies\\charmander_i.gif";
+		String Ruta_ZombieSaltarin_i = "C:\\Users\\david\\Desktop\\images\\Zombies\\squirtle_i.gif";
+		
+		String Ruta_ZombieCaminante_d = "C:\\Users\\david\\Desktop\\images\\Zombies\\bulbasaur_d.gif";
+		String Ruta_ZombieCorredor_d = "C:\\Users\\david\\Desktop\\images\\Zombies\\charmander_d.gif";
+		String Ruta_ZombieSaltarin_d = "C:\\Users\\david\\Desktop\\images\\Zombies\\squirtle_d.gif";
+		
 		
 		JLabel txt_Entrar = new JLabel("COMENZAR");
 		
@@ -181,32 +187,94 @@ public class Login extends JFrame {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				PantallaJuego post = new PantallaJuego();
+				PantallaJuego post;				
+				
+				int opcion = 0;
 				
 				// Condicional imagen zombie P1
 				if (P1_radio1.isSelected()) {
-					post.cambiarImagenP1_zombie(Ruta_ZombieCaminante);
+					opcion = 1;
 				} 
 				else if (P1_radio2.isSelected()) {
-					post.cambiarImagenP1_zombie(Ruta_ZombieCorredor);
+					opcion = 2;
 				}
 				else if (P1_radio3.isSelected()) {
-					post.cambiarImagenP1_zombie(Ruta_ZombieSaltarin);
+					opcion = 3;
+				}
+				
+				int opcion2 = 0;
+				
+				// Condicional imagen zombie P2
+				if (P2_radio1.isSelected()) {
+					opcion2 = 1;
+				} 
+				else if (P2_radio2.isSelected()) {
+					opcion2 = 2;
+				}
+				else if (P2_radio3.isSelected()) {
+					opcion2 = 3;
+				}				
+				
+				Zombie c1 = null;
+				
+				switch (opcion) {
+				case 1:
+					c1 = new ZombieCaminante();
+					break;
+				case 2:
+					c1 = new ZombieCorredor();
+					break;
+				case 3:
+					c1 = new ZombieSaltarin();
+					break;
+				default:
+					// Hay que poner control de errores
+					break;
+				}				
+				
+				Zombie c2 = null;
+				
+				switch (opcion2) {
+				case 1:
+					c2 = new ZombieCaminante();
+					break;
+				case 2:
+					c2 = new ZombieCorredor();
+					break;
+				case 3:
+					c2 = new ZombieSaltarin();
+					break;
+				default:
+					// Hay que poner control de errores
+					break;
+				}
+				
+				post = new PantallaJuego(c1,c2, opcion, opcion2);
+				
+				if (P1_radio1.isSelected()) {
+					post.cambiarImagenP1_zombie(Ruta_ZombieCaminante_d);
+				} 
+				else if (P1_radio2.isSelected()) {
+					post.cambiarImagenP1_zombie(Ruta_ZombieCorredor_d);
+				}
+				else if (P1_radio3.isSelected()) {
+					post.cambiarImagenP1_zombie(Ruta_ZombieSaltarin_d);
 				}
 				
 				// Condicional imagen zombie P2
 				if (P2_radio1.isSelected()) {
-					post.cambiarImagenP2_zombie(Ruta_ZombieCaminante);
+					post.cambiarImagenP2_zombie(Ruta_ZombieCaminante_i);
 				} 
 				else if (P2_radio2.isSelected()) {
-					post.cambiarImagenP2_zombie(Ruta_ZombieCorredor);
+					post.cambiarImagenP2_zombie(Ruta_ZombieCorredor_i);
 				}
 				else if (P2_radio3.isSelected()) {
-					post.cambiarImagenP2_zombie(Ruta_ZombieSaltarin);
-				}
-								
-				thisFrame.dispose();				
+					post.cambiarImagenP2_zombie(Ruta_ZombieSaltarin_i);
+				}		
+				
 				post.setVisible(true);
+				thisFrame.dispose();				
+				
 				
 			}
 		});

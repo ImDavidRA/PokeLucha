@@ -8,7 +8,4 @@ public class Main {
 		Login window=new Login();
 		window.setVisible(true);
 	}
-	
-	
-
 }
