@@ -55,7 +55,8 @@ public class PantallaJuego extends JFrame {
 	private final JLabel Daño_a_P1_doble1 = new JLabel("");
 	private final JLabel Daño_a_P1_doble2 = new JLabel("");
 
-	public PantallaJuego(Zombie Zombie_de_P1, Zombie Zombie_de_P2, int tipoz1, int tipoz2) {		
+	public PantallaJuego(Zombie Zombie_de_P1, Zombie Zombie_de_P2, int tipoz1, int tipoz2) {
+		
 		setLocationByPlatform(true);
 		setUndecorated(true);
 		setResizable(false);
@@ -286,10 +287,10 @@ public class PantallaJuego extends JFrame {
 			}
 
 			boolean esquiva = false;
-			if (opcion == 3) {
+			if (opcion2 == 3) {
 				esquiva = ((ZombieSaltarin) c2).evasion(x);
 				if (esquiva) {
-					Daño_a_P2.setText("FALLO");
+					Daño_a_P2.setText("¡ESQUIVADO!");
 				}
 			}
 			
@@ -365,10 +366,10 @@ public class PantallaJuego extends JFrame {
 			}
 			
 			esquiva = false;
-			if (opcion2 == 3) {
+			if (opcion == 3) {
 				esquiva = ((ZombieSaltarin) c1).evasion(y);
 				if (esquiva) {
-					Daño_a_P1.setText("FALLO");
+					Daño_a_P1.setText("¡ESQUIVADO!");
 				}
 			}
 			

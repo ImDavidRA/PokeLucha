@@ -154,7 +154,7 @@ public class Final extends JFrame {
 												JLabel img_Bg = new JLabel("");
 												img_Bg.setHorizontalTextPosition(SwingConstants.CENTER);
 												img_Bg.setHorizontalAlignment(SwingConstants.CENTER);
-												img_Bg.setIcon(new ImageIcon("D:\\Descargas\\karina-formanova-rainforest-animation-ezgif.com-resize.gif"));
+												img_Bg.setIcon(new ImageIcon("C:\\Users\\david\\Desktop\\images\\FondoFinal.gif"));
 												img_Bg.setFont(new Font("Montserrat", Font.BOLD, 11));
 												img_Bg.setBounds(0, 0, 804, 500);
 												background.add(img_Bg);

@@ -4,10 +4,10 @@ public class ZombieSaltarin extends Zombie {
 	
 	ZombieSaltarin() {
 		this.daño=75;
-		this.salud=350;
+		this.salud=375;
 		this.nombre="ZombieSaltarin";
 		this.velocidad=4;
-		this.maxsalud=350;
+		this.maxsalud=375;
 		this.ruta="C:\\Users\\david\\Desktop\\images\\Zombies\\squirtle_i.gif";
 	}	
 	

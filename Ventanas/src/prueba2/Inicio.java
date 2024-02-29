@@ -32,7 +32,8 @@ public class Inicio extends JFrame {
 	private ButtonGroup buttonG = new ButtonGroup();
 	private ButtonGroup buttonG2 = new ButtonGroup();
 	
-	public Inicio() {		
+	public Inicio() {
+		
 		setLocationByPlatform(true);
 		setUndecorated(true);
 		setResizable(false);
@@ -99,7 +100,7 @@ public class Inicio extends JFrame {
 								P1_radio1.setBorder(null);
 								P1_radio1.setForeground(Color.WHITE);
 								P1_radio1.setSelected(true);
-								P1_radio1.setToolTipText("STATS (100 DAÑO, 300 SALUD, 5 VELOCIDAD)");
+								P1_radio1.setToolTipText("STATS (50 DAÑO, 400 SALUD, 5 VELOCIDAD)");
 								P1_radio1.setFont(new Font("Retro Gaming", Font.BOLD, 15));
 								P1_radio1.setBounds(104, 310, 224, 25);
 								background.add(P1_radio1);
@@ -109,7 +110,7 @@ public class Inicio extends JFrame {
 										P1_radio2.setOpaque(false);
 										P1_radio2.setForeground(Color.WHITE);
 										P1_radio2.setBorder(null);
-										P1_radio2.setToolTipText("STATS (75 DAÑO, 325 SALUD, 7 VELOCIDAD)");
+										P1_radio2.setToolTipText("STATS (75 DAÑO, 350 SALUD, 7 VELOCIDAD)");
 										P1_radio2.setFont(new Font("Retro Gaming", Font.BOLD, 15));
 										P1_radio2.setBounds(104, 335, 224, 25);
 										background.add(P1_radio2);
@@ -119,7 +120,7 @@ public class Inicio extends JFrame {
 											P1_radio3.setOpaque(false);
 											P1_radio3.setForeground(Color.WHITE);
 											P1_radio3.setBorder(null);
-											P1_radio3.setToolTipText("STATS (150 DAÑO, 250 SALUD, 6 VELOCIDAD)");
+											P1_radio3.setToolTipText("STATS (75 DAÑO, 375 SALUD, 4 VELOCIDAD)");
 											P1_radio3.setFont(new Font("Retro Gaming", Font.BOLD, 15));
 											P1_radio3.setBounds(104, 360, 224, 25);
 											background.add(P1_radio3);			
@@ -129,7 +130,7 @@ public class Inicio extends JFrame {
 		buttonG.add(P1_radio3);		
 								
 								JRadioButton P2_radio1 = new JRadioButton("Zombie Caminante");
-								P2_radio1.setToolTipText("STATS (100 DAÑO, 300 SALUD, 5 VELOCIDAD)");
+								P2_radio1.setToolTipText("STATS (50 DAÑO, 400 SALUD, 5 VELOCIDAD)");
 								P2_radio1.setSelected(true);
 								P2_radio1.setOpaque(false);
 								P2_radio1.setForeground(Color.WHITE);
@@ -139,7 +140,7 @@ public class Inicio extends JFrame {
 								background.add(P2_radio1);
 								
 								JRadioButton P2_radio2 = new JRadioButton("Zombie Corredor");
-								P2_radio2.setToolTipText("STATS (75 DAÑO, 325 SALUD, 7 VELOCIDAD)");
+								P2_radio2.setToolTipText("STATS (75 DAÑO, 350 SALUD, 7 VELOCIDAD)");
 								P2_radio2.setOpaque(false);
 								P2_radio2.setForeground(Color.WHITE);
 								P2_radio2.setFont(new Font("Retro Gaming", Font.BOLD, 15));
@@ -148,7 +149,7 @@ public class Inicio extends JFrame {
 								background.add(P2_radio2);
 								
 								JRadioButton P2_radio3 = new JRadioButton("Zombie Saltarín");
-								P2_radio3.setToolTipText("STATS (150 DAÑO, 250 SALUD, 6 VELOCIDAD)");
+								P2_radio3.setToolTipText("STATS (75 DAÑO, 375 SALUD, 4 VELOCIDAD)");
 								P2_radio3.setOpaque(false);
 								P2_radio3.setForeground(Color.WHITE);
 								P2_radio3.setFont(new Font("Retro Gaming", Font.BOLD, 15));
@@ -186,7 +187,7 @@ public class Inicio extends JFrame {
 				Panel_Entrar.setOpaque(false);
 			}
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mouseClicked(MouseEvent e) {				
 				PantallaJuego post;				
 				
 				int opcion = 0;
@@ -248,6 +249,8 @@ public class Inicio extends JFrame {
 					// Hay que poner control de errores
 					break;
 				}
+				
+				
 				
 				post = new PantallaJuego(c1,c2, opcion, opcion2);
 				
