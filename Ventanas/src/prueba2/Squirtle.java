@@ -1,6 +1,6 @@
 package prueba2;
 
-public class Squirtle extends Pokemon {
+public class Squirtle extends Mew {
 	
 	Squirtle() {
 		this.daño=75;
@@ -13,7 +13,7 @@ public class Squirtle extends Pokemon {
 	
 	// Metodos
 	public boolean evasion(int h) {
-		int chance = (int)(Math.random()*10);
+		int chance = (int)(Math.random()*9);
 		
 		if (chance==0) {
 			this.salud+=h;

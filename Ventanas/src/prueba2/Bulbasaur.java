@@ -1,6 +1,6 @@
 package prueba2;
 
-public class Bulbasaur extends Pokemon {
+public class Bulbasaur extends Mew {
 	
 	Bulbasaur() {
 		this.daño=50;

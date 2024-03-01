@@ -24,7 +24,7 @@ import javax.swing.JProgressBar;
 
 public class Combate extends JFrame {
 
-	final static int TIEMPO = 200;
+	final static int TIEMPO = 600;
 	
 	final static int T_DAÑOS = TIEMPO-100;
 
@@ -55,7 +55,7 @@ public class Combate extends JFrame {
 	private final JLabel Daño_a_P1_doble1 = new JLabel("");
 	private final JLabel Daño_a_P1_doble2 = new JLabel("");
 
-	public Combate(Pokemon Zombie_de_P1, Pokemon Zombie_de_P2, int tipoz1, int tipoz2) {
+	public Combate(Mew Zombie_de_P1, Mew Zombie_de_P2, int tipoz1, int tipoz2) {
 		
 		setLocationByPlatform(true);
 		setUndecorated(true);
@@ -230,7 +230,7 @@ public class Combate extends JFrame {
 		iniciarCombate(Zombie_de_P1, Zombie_de_P2, tipoz1, tipoz2);
 	}
 	
-    public void iniciarCombate(Pokemon c1, Pokemon c2, int opcion, int opcion2) {
+    public void iniciarCombate(Mew c1, Mew c2, int opcion, int opcion2) {
         // Crear un hilo para el combate
         Thread combateThread = new Thread(new Runnable() {
             @Override
@@ -244,7 +244,7 @@ public class Combate extends JFrame {
     }
 
 	// Método de pelea
-	public void pelea(Pokemon c1, Pokemon c2, int opcion, int opcion2) {
+	public void pelea(Mew c1, Mew c2, int opcion, int opcion2) {
 		while (c1.getSalud()>0 && c2.getSalud()>0) {
 			
 			int conta = 0;
@@ -300,7 +300,7 @@ public class Combate extends JFrame {
 			}
 			
 			// Se actualiza la vida del zombie enemigo
-			c2.recibirDanio(x);			
+			c2.recibirDaño(x);			
 			
 			// Modificamos la vida del zombie texto (Si baja de 0, pondremos solo 0)
 			if (c2.getSalud()>0) {
@@ -379,7 +379,7 @@ public class Combate extends JFrame {
 			}
 			
 			// Se actualiza la vida del zombie enemigo
-			c1.recibirDanio(y);	
+			c1.recibirDaño(y);	
 
 			if (c1.getSalud()>0)
 				P1_hpText.setText(c1.getSalud()+" / "+c1.getMaxsalud());

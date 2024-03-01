@@ -216,7 +216,7 @@ public class Inicio extends JFrame {
 					opcion2 = 3;
 				}				
 				
-				Pokemon c1 = null;
+				Mew c1 = null;
 				
 				switch (opcion) {
 				case 1:
@@ -233,7 +233,7 @@ public class Inicio extends JFrame {
 					break;
 				}				
 				
-				Pokemon c2 = null;
+				Mew c2 = null;
 				
 				switch (opcion2) {
 				case 1:

@@ -1,6 +1,6 @@
 package prueba2;
 
-public class Charmander extends Pokemon {
+public class Charmander extends Mew {
 	
 	Charmander() {
 		this.daño=75;

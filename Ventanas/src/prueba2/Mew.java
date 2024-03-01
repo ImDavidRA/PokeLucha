@@ -1,6 +1,6 @@
 package prueba2;
 
-public class Pokemon {
+public class Mew {
 	
 	// Atributos //
 	public String nombre;
@@ -24,9 +24,8 @@ public class Pokemon {
 	 * Método que reduce la salud del Zombie actuál en base al método atacar() de otro zombie
 	 * @param z - Zombie parámetro
 	 */
-	public void recibirDanio(int x) {
+	public void recibirDaño(int x) {
 		this.salud -= x;
-
 	}
 	
 	@Override
