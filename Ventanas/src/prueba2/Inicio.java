@@ -52,7 +52,7 @@ public class Inicio extends JFrame {
 		contentPane.add(background);
 		background.setLayout(null);
 
-		JLabel img_Logo_txt_Logo = new JLabel("ZombieLand");
+		JLabel img_Logo_txt_Logo = new JLabel("POKELUCHA");
 		img_Logo_txt_Logo.setForeground(Color.WHITE);
 		img_Logo_txt_Logo.setHorizontalAlignment(SwingConstants.CENTER);
 		img_Logo_txt_Logo.setFont(new Font("Retro Gaming", Font.BOLD, 60));
@@ -94,7 +94,7 @@ public class Inicio extends JFrame {
 		barra.setBounds(45, 0, 759, 35);
 		background.add(barra);
 								
-								JRadioButton P1_radio1 = new JRadioButton("Zombie Caminante");
+								JRadioButton P1_radio1 = new JRadioButton("BULBASAUR");
 								P1_radio1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 								P1_radio1.setOpaque(false);
 								P1_radio1.setBorder(null);
@@ -102,59 +102,59 @@ public class Inicio extends JFrame {
 								P1_radio1.setSelected(true);
 								P1_radio1.setToolTipText("STATS (50 DAÑO, 400 SALUD, 5 VELOCIDAD)");
 								P1_radio1.setFont(new Font("Retro Gaming", Font.BOLD, 15));
-								P1_radio1.setBounds(104, 310, 224, 25);
+								P1_radio1.setBounds(130, 310, 224, 25);
 								background.add(P1_radio1);
 										
-										JRadioButton P1_radio2 = new JRadioButton("Zombie Corredor");
+										JRadioButton P1_radio2 = new JRadioButton("CHARMANDER");
 										P1_radio2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 										P1_radio2.setOpaque(false);
 										P1_radio2.setForeground(Color.WHITE);
 										P1_radio2.setBorder(null);
 										P1_radio2.setToolTipText("STATS (75 DAÑO, 350 SALUD, 7 VELOCIDAD)");
 										P1_radio2.setFont(new Font("Retro Gaming", Font.BOLD, 15));
-										P1_radio2.setBounds(104, 335, 224, 25);
+										P1_radio2.setBounds(130, 335, 224, 25);
 										background.add(P1_radio2);
 										
-											JRadioButton P1_radio3 = new JRadioButton("Zombie Saltarín");
+											JRadioButton P1_radio3 = new JRadioButton("SQUIRTLE");
 											P1_radio3.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 											P1_radio3.setOpaque(false);
 											P1_radio3.setForeground(Color.WHITE);
 											P1_radio3.setBorder(null);
 											P1_radio3.setToolTipText("STATS (75 DAÑO, 375 SALUD, 4 VELOCIDAD)");
 											P1_radio3.setFont(new Font("Retro Gaming", Font.BOLD, 15));
-											P1_radio3.setBounds(104, 360, 224, 25);
+											P1_radio3.setBounds(130, 360, 224, 25);
 											background.add(P1_radio3);			
 												
 		buttonG.add(P1_radio1);
 		buttonG.add(P1_radio2);
 		buttonG.add(P1_radio3);		
 								
-								JRadioButton P2_radio1 = new JRadioButton("Zombie Caminante");
+								JRadioButton P2_radio1 = new JRadioButton("BULBASAUR");
 								P2_radio1.setToolTipText("STATS (50 DAÑO, 400 SALUD, 5 VELOCIDAD)");
 								P2_radio1.setSelected(true);
 								P2_radio1.setOpaque(false);
 								P2_radio1.setForeground(Color.WHITE);
 								P2_radio1.setFont(new Font("Retro Gaming", Font.BOLD, 15));
 								P2_radio1.setBorder(null);
-								P2_radio1.setBounds(505, 310, 224, 25);
+								P2_radio1.setBounds(531, 310, 224, 25);
 								background.add(P2_radio1);
 								
-								JRadioButton P2_radio2 = new JRadioButton("Zombie Corredor");
+								JRadioButton P2_radio2 = new JRadioButton("CHARMANDER");
 								P2_radio2.setToolTipText("STATS (75 DAÑO, 350 SALUD, 7 VELOCIDAD)");
 								P2_radio2.setOpaque(false);
 								P2_radio2.setForeground(Color.WHITE);
 								P2_radio2.setFont(new Font("Retro Gaming", Font.BOLD, 15));
 								P2_radio2.setBorder(null);
-								P2_radio2.setBounds(505, 335, 224, 25);
+								P2_radio2.setBounds(531, 335, 224, 25);
 								background.add(P2_radio2);
 								
-								JRadioButton P2_radio3 = new JRadioButton("Zombie Saltarín");
+								JRadioButton P2_radio3 = new JRadioButton("SQUIRTLE");
 								P2_radio3.setToolTipText("STATS (75 DAÑO, 375 SALUD, 4 VELOCIDAD)");
 								P2_radio3.setOpaque(false);
 								P2_radio3.setForeground(Color.WHITE);
 								P2_radio3.setFont(new Font("Retro Gaming", Font.BOLD, 15));
 								P2_radio3.setBorder(null);
-								P2_radio3.setBounds(505, 360, 224, 25);
+								P2_radio3.setBounds(531, 360, 224, 25);
 								background.add(P2_radio3);
 								
 		buttonG2.add(P2_radio1);
@@ -188,7 +188,7 @@ public class Inicio extends JFrame {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {				
-				PantallaJuego post;				
+				Combate post;				
 				
 				int opcion = 0;
 				
@@ -216,34 +216,34 @@ public class Inicio extends JFrame {
 					opcion2 = 3;
 				}				
 				
-				Zombie c1 = null;
+				Pokemon c1 = null;
 				
 				switch (opcion) {
 				case 1:
-					c1 = new ZombieCaminante();
+					c1 = new Bulbasaur();
 					break;
 				case 2:
-					c1 = new ZombieCorredor();
+					c1 = new Charmander();
 					break;
 				case 3:
-					c1 = new ZombieSaltarin();
+					c1 = new Squirtle();
 					break;
 				default:
 					// Hay que poner control de errores
 					break;
 				}				
 				
-				Zombie c2 = null;
+				Pokemon c2 = null;
 				
 				switch (opcion2) {
 				case 1:
-					c2 = new ZombieCaminante();
+					c2 = new Bulbasaur();
 					break;
 				case 2:
-					c2 = new ZombieCorredor();
+					c2 = new Charmander();
 					break;
 				case 3:
-					c2 = new ZombieSaltarin();
+					c2 = new Squirtle();
 					break;
 				default:
 					// Hay que poner control de errores
@@ -252,7 +252,7 @@ public class Inicio extends JFrame {
 				
 				
 				
-				post = new PantallaJuego(c1,c2, opcion, opcion2);
+				post = new Combate(c1,c2, opcion, opcion2);
 				
 				if (P1_radio1.isSelected()) {
 					post.cambiarImagenP1_zombie(Ruta_ZombieCaminante_d);
@@ -322,7 +322,7 @@ public class Inicio extends JFrame {
 												JLabel img_Bg = new JLabel("");
 												img_Bg.setHorizontalTextPosition(SwingConstants.CENTER);
 												img_Bg.setHorizontalAlignment(SwingConstants.CENTER);
-												img_Bg.setIcon(new ImageIcon("C:\\Users\\david\\Desktop\\images\\fondoInicio.gif"));
+												img_Bg.setIcon(new ImageIcon("C:\\Users\\david\\Desktop\\images\\FondoInicio.gif"));
 												img_Bg.setFont(new Font("Montserrat", Font.BOLD, 11));
 												img_Bg.setBounds(0, 0, 804, 500);
 												background.add(img_Bg);

@@ -1,6 +1,6 @@
 package prueba2;
 
-public class Zombie {
+public class Pokemon {
 	
 	// Atributos //
 	public String nombre;

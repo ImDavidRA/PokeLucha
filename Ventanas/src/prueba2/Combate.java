@@ -22,11 +22,11 @@ import javax.swing.border.TitledBorder;
 import javax.swing.JRadioButton;
 import javax.swing.JProgressBar;
 
-public class PantallaJuego extends JFrame {
+public class Combate extends JFrame {
 
-	final static int TIEMPO = 800;
+	final static int TIEMPO = 200;
 	
-	final static int T_DAÑOS = 700;
+	final static int T_DAÑOS = TIEMPO-100;
 
 	int xMouse, yMouse;
 	private JFrame thisFrame;
@@ -55,7 +55,7 @@ public class PantallaJuego extends JFrame {
 	private final JLabel Daño_a_P1_doble1 = new JLabel("");
 	private final JLabel Daño_a_P1_doble2 = new JLabel("");
 
-	public PantallaJuego(Zombie Zombie_de_P1, Zombie Zombie_de_P2, int tipoz1, int tipoz2) {
+	public Combate(Pokemon Zombie_de_P1, Pokemon Zombie_de_P2, int tipoz1, int tipoz2) {
 		
 		setLocationByPlatform(true);
 		setUndecorated(true);
@@ -140,7 +140,7 @@ public class PantallaJuego extends JFrame {
 		barra.addMouseMotionListener(new MouseMotionAdapter() {
 			@Override
 			public void mouseDragged(MouseEvent e) {
-				PantallaJuego.this.setLocation(e.getXOnScreen() - xMouse, e.getYOnScreen() - yMouse);
+				Combate.this.setLocation(e.getXOnScreen() - xMouse, e.getYOnScreen() - yMouse);
 			}
 		});
 		barra.addMouseListener(new MouseAdapter() {
@@ -230,7 +230,7 @@ public class PantallaJuego extends JFrame {
 		iniciarCombate(Zombie_de_P1, Zombie_de_P2, tipoz1, tipoz2);
 	}
 	
-    public void iniciarCombate(Zombie c1, Zombie c2, int opcion, int opcion2) {
+    public void iniciarCombate(Pokemon c1, Pokemon c2, int opcion, int opcion2) {
         // Crear un hilo para el combate
         Thread combateThread = new Thread(new Runnable() {
             @Override
@@ -244,7 +244,7 @@ public class PantallaJuego extends JFrame {
     }
 
 	// Método de pelea
-	public void pelea(Zombie c1, Zombie c2, int opcion, int opcion2) {
+	public void pelea(Pokemon c1, Pokemon c2, int opcion, int opcion2) {
 		while (c1.getSalud()>0 && c2.getSalud()>0) {
 			
 			int conta = 0;
@@ -266,7 +266,7 @@ public class PantallaJuego extends JFrame {
 			// Llamamiento a los métodos en función del tipo de zombie del P1
 			boolean critico = false;
 			if (opcion == 1) {
-				critico = ((ZombieCaminante) c1).crit();
+				critico = ((Bulbasaur) c1).crit();
 				if (critico) {
 					x *= 1.5;
 					Daño_a_P2.setText("CRITICO -"+x);
@@ -275,7 +275,7 @@ public class PantallaJuego extends JFrame {
 
 			boolean velocidad = false;
 			if (opcion == 2) {
-				velocidad = ((ZombieCorredor) c1).doubleHit();
+				velocidad = ((Charmander) c1).doubleHit();
 				if (velocidad) {
 					Daño_a_P2.setText("DOUBLE HIT");
 					Daño_a_P2_doble1.setText("-"+x);
@@ -288,7 +288,7 @@ public class PantallaJuego extends JFrame {
 
 			boolean esquiva = false;
 			if (opcion2 == 3) {
-				esquiva = ((ZombieSaltarin) c2).evasion(x);
+				esquiva = ((Squirtle) c2).evasion(x);
 				if (esquiva) {
 					Daño_a_P2.setText("¡ESQUIVADO!");
 				}
@@ -345,7 +345,7 @@ public class PantallaJuego extends JFrame {
 			// Llamamiento a los métodos en función del tipo de zombie del P1
 			critico = false;
 			if (opcion2 == 1) {
-				critico = ((ZombieCaminante) c2).crit();
+				critico = ((Bulbasaur) c2).crit();
 				if (critico) {
 					y *= 1.5;
 					Daño_a_P1.setText("CRITICO -"+y);
@@ -354,7 +354,7 @@ public class PantallaJuego extends JFrame {
 
 			velocidad = false;
 			if (opcion2 == 2) {
-				velocidad = ((ZombieCorredor) c2).doubleHit();
+				velocidad = ((Charmander) c2).doubleHit();
 				if (velocidad) {
 					Daño_a_P1.setText("DOUBLE HIT");
 					Daño_a_P1_doble1.setText("-"+y);
@@ -367,7 +367,7 @@ public class PantallaJuego extends JFrame {
 			
 			esquiva = false;
 			if (opcion == 3) {
-				esquiva = ((ZombieSaltarin) c1).evasion(y);
+				esquiva = ((Squirtle) c1).evasion(y);
 				if (esquiva) {
 					Daño_a_P1.setText("¡ESQUIVADO!");
 				}
@@ -412,9 +412,9 @@ public class PantallaJuego extends JFrame {
 		Final Pfinal;
 		
 		if (c1.getSalud()>c2.getSalud()) 
-			Pfinal = new Final("Player1", c1);
+			Pfinal = new Final("PLAYER1", c1);
 		else
-			Pfinal = new Final("Player2", c2);		
+			Pfinal = new Final("PLAYER2", c2);		
 		
 		Pfinal.setVisible(true);	
 		thisFrame.dispose();

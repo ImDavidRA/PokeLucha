@@ -1,11 +1,11 @@
 package prueba2;
 
-public class ZombieSaltarin extends Zombie {
+public class Squirtle extends Pokemon {
 	
-	ZombieSaltarin() {
+	Squirtle() {
 		this.daño=75;
 		this.salud=375;
-		this.nombre="ZombieSaltarin";
+		this.nombre="Squirtle";
 		this.velocidad=4;
 		this.maxsalud=375;
 		this.ruta="C:\\Users\\david\\Desktop\\images\\Zombies\\squirtle_i.gif";

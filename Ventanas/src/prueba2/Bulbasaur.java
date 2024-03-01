@@ -1,11 +1,11 @@
 package prueba2;
 
-public class ZombieCaminante extends Zombie {
+public class Bulbasaur extends Pokemon {
 	
-	ZombieCaminante() {
+	Bulbasaur() {
 		this.daño=50;
 		this.salud=400;
-		this.nombre="ZombiCaminante";
+		this.nombre="Bulbasaur";
 		this.velocidad=5;
 		this.maxsalud=400;
 		this.ruta="C:\\Users\\david\\Desktop\\images\\Zombies\\bulbasaur_i.gif";

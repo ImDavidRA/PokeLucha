@@ -29,7 +29,7 @@ public class Final extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	
-	public Final(String playerGanador, Zombie zGanador) {		
+	public Final(String playerGanador, Pokemon zGanador) {		
 		setLocationByPlatform(true);
 		setUndecorated(true);
 		setResizable(false);

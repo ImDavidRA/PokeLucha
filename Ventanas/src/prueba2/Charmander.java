@@ -1,11 +1,11 @@
 package prueba2;
 
-public class ZombieCorredor extends Zombie {
+public class Charmander extends Pokemon {
 	
-	ZombieCorredor() {
+	Charmander() {
 		this.daño=75;
 		this.salud=350;
-		this.nombre="ZombiCorredor";
+		this.nombre="Charmander";
 		this.velocidad=7;
 		this.maxsalud=350;
 		this.ruta="C:\\Users\\david\\Desktop\\images\\Zombies\\charmander_i.gif";
